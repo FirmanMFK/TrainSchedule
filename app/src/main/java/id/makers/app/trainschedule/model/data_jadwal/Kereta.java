@@ -8,11 +8,9 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Kereta {
-
     @SerializedName("name")
     @Expose
     private String name;
-
     @SerializedName("class")
     @Expose
     private String _class;
@@ -25,11 +23,12 @@ public class Kereta {
         this.name = name;
     }
 
-    public String get_class() {
+    public String getClass_() {
         return _class;
     }
 
-    public void set_class(String _class) {
+    public void setClass_(String _class) {
         this._class = _class;
     }
 }
+
