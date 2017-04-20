@@ -87,4 +87,3 @@ public class AdapterKotaAsalTujuan extends RecyclerView.Adapter<AdapterKotaAsalT
     }
 
 }
-
