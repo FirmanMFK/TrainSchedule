@@ -15,7 +15,7 @@ import id.makers.app.trainschedule.model.data_jadwal.Datum;
  * Created by Firman on 4/11/2017.
  */
 
-public class AdapterJadwalKeretaApi extends RecyclerView.Adapter {
+public class AdapterJadwalKeretaApi extends RecyclerView.Adapter<AdapterJadwalKeretaApi.ViewHolder> {
 
     public static final int ITEM_HEADER = 1;
     public static final int ITEM_CONTENT = 2;
@@ -36,7 +36,6 @@ public class AdapterJadwalKeretaApi extends RecyclerView.Adapter {
         this.kotaTujuan = kotaTujuan;
     }
 
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
@@ -54,12 +53,11 @@ public class AdapterJadwalKeretaApi extends RecyclerView.Adapter {
         }
     }
 
-
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         int viewType = listViewType.get(position);
         if (viewType == ITEM_HEADER || viewType == ITEM_FOOTER) {
-
+            //  nothing to do in here
         } else if (viewType == ITEM_CONTENT) {
             ItemJadwalKeretaApiViewHolder itemJadwalKeretaApiViewHolder = (ItemJadwalKeretaApiViewHolder) holder;
             Datum datum = listDatum.get(position);
@@ -88,20 +86,21 @@ public class AdapterJadwalKeretaApi extends RecyclerView.Adapter {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+
         public ViewHolder(View itemView) {
             super(itemView);
         }
     }
 
-
     public class ItemJadwalKeretaApiHeaderViewHolder extends ViewHolder {
+
         public ItemJadwalKeretaApiHeaderViewHolder(View itemView) {
             super(itemView);
         }
     }
 
-
     public class ItemJadwalKeretaApiFooterViewHolder extends ViewHolder {
+
         public ItemJadwalKeretaApiFooterViewHolder(View itemView) {
             super(itemView);
         }
@@ -120,7 +119,6 @@ public class AdapterJadwalKeretaApi extends RecyclerView.Adapter {
         private TextView textViewTanggalDatang;
         private TextView textViewKotaTujuan;
 
-
         public ItemJadwalKeretaApiViewHolder(View itemView) {
             super(itemView);
             textViewNamaKeretaApi = (TextView) itemView.findViewById(R.id.text_view_nama_kereta_api_item_jadwal_kereta_api);
@@ -135,6 +133,5 @@ public class AdapterJadwalKeretaApi extends RecyclerView.Adapter {
             textViewKotaTujuan = (TextView) itemView.findViewById(R.id.text_view_kota_tujuan_item_jadwal_kereta_api);
         }
     }
+
 }
-
-
